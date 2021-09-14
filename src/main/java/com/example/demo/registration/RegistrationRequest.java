@@ -1,5 +1,6 @@
 package com.example.demo.registration;
 
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,18 +15,34 @@ public class RegistrationRequest {
     private String lastName;
     private String email;
     private String password;
-    public String getFirstName() {
-        return firstName;
-    }
-
+    private String appUserRole;
     
     public RegistrationRequest() {
     }
-    public RegistrationRequest(String firstName, String lastName, String email, String password) {
+    
+
+    public RegistrationRequest(String firstName, String lastName, String email, String password,
+            String appUserRole) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.appUserRole = appUserRole;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+
+    public String getAppUserRole() {
+        return appUserRole;
+    }
+
+
+    public void setAppUserRole(String appUserRole) {
+        this.appUserRole = appUserRole;
     }
 
 

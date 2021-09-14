@@ -1,5 +1,4 @@
-package com.example.demo.registration.token;
-
+package com.example.demo.token;
 import com.example.demo.appuser.AppUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,7 +43,8 @@ public class ConfirmationToken {
     )
     private AppUser appUser;
 
-    public LocalDateTime getExpiresAt() {
+
+public LocalDateTime getExpiresAt() {
         return expiresAt;
 }
 

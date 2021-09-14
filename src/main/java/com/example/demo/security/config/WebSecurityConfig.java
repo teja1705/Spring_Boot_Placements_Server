@@ -1,7 +1,8 @@
 package com.example.demo.security.config;
 
-import com.example.demo.appuser.AppUserService;
 import lombok.AllArgsConstructor;
+
+import com.example.demo.Student.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AppUserService appUserService;
+    private StudentService studentService;
     @Autowired
     org.springframework.security.crypto.password.PasswordEncoder encoder
    = new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder();
@@ -44,8 +45,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider =
                 new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(encoder);
-        provider.setUserDetailsService(appUserService);
+        provider.setPasswordEncoder(encoder);    
+        provider.setUserDetailsService(studentService);
         return provider;
     }
 }
